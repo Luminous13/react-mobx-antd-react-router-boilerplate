@@ -9,10 +9,12 @@ import Home from "./Home";
 
 // Store Init
 import { 
-  StartingStore
+  StartingStore,
+  Api
 } from "../stores";
 
-const startingStore = new StartingStore();
+const api = new Api()
+const startingStore = new StartingStore(api);
 
 const stores = {
   startingStore

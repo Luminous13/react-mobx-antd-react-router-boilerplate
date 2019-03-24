@@ -5,6 +5,11 @@ class StartingStore {
   welcomeMessage = "Welcome!";
   listOfUsers = [];
   currentUser = new User();
+  api = undefined
+
+  constructor(api) {
+    this.api = api
+  }
 
   changeMessage = msg => {
     this.welcomeMessage = msg.target.value;
@@ -20,6 +25,13 @@ class StartingStore {
     // changing model property
     this.currentUser.setProperty("firstName", firstName);
   };
+
+  getName = () => {
+    this.api.getUsers()
+    .then(data => {
+      console.log(data.data)
+    })
+  }
 }
 
 decorate(StartingStore, {
@@ -28,7 +40,8 @@ decorate(StartingStore, {
   currentUser: observable,
   changeMessage: action,
   resetMessage: action,
-  pushToArray: action
+  pushToArray: action,
+  getName: action
 });
 
 export default StartingStore;

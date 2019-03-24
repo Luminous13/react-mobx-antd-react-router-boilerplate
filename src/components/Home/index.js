@@ -5,7 +5,7 @@ import { inject, observer } from "mobx-react";
 class Home extends Component {
   render() {
     let {
-      startingStore: { welcomeMessage, changeMessage, resetMessage, currentUser }
+      startingStore: { welcomeMessage, changeMessage, resetMessage, currentUser, getName }
     } = this.props;
     return (
       <div>
@@ -21,6 +21,7 @@ class Home extends Component {
           <Button
             onClick={() => {
               resetMessage();
+              getName();
             }}
           >
             Click Me!

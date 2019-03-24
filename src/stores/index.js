@@ -1,5 +1,7 @@
 import StartingStore from "./StartingStore";
+import Api from './Api'
 
-export { 
+export {
+  Api,
   StartingStore 
 };
