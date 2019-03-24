@@ -5,7 +5,7 @@ import { inject, observer } from "mobx-react";
 class Home extends Component {
   render() {
     let {
-      startingStore: { welcomeMessage, changeMessage, resetMessage }
+      startingStore: { welcomeMessage, changeMessage, resetMessage, currentUser }
     } = this.props;
     return (
       <div>
